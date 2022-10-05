@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-#[derive(Queryable, Debug)]
-=======
 extern crate diesel;
 use diesel::{PgConnection, r2d2::{ConnectionManager, PooledConnection}};
 use serde::{Deserialize, Serialize};
 
 #[derive(Queryable, Debug, Deserialize, Serialize)]
->>>>>>> dev
 pub struct Post{
     pub id: i32,
     pub title: String,
@@ -14,9 +10,6 @@ pub struct Post{
     pub body: String,
 }
 
-<<<<<<< HEAD
-#[derive(Queryable, Debug)]
-=======
 #[derive(Clone, Serialize, Deserialize, Debug)]
 pub struct NewPostHandler{
     pub title: String,
@@ -24,28 +17,20 @@ pub struct NewPostHandler{
 }
 
 #[derive(Queryable, Debug, Deserialize, Serialize)]
->>>>>>> dev
 pub struct PostSimplificado{
     pub title: String,
     pub body: String,
 }
 
-<<<<<<< HEAD
 use super::schema::posts;
-=======
 use diesel::prelude::*;
 
-use super::schema::posts;
-
->>>>>>> dev
 #[derive(Insertable)]
 #[diesel(table_name = posts)]
 pub struct NewPost<'a>{
     pub title: &'a str,
     pub body: &'a str,
     pub slug: &'a str,
-<<<<<<< HEAD
-=======
 }
 
 
@@ -67,5 +52,4 @@ impl Post{
 
         diesel::insert_into(posts::table).values(new_post).get_result::<Post>(&mut conn)
     }
->>>>>>> dev
 }

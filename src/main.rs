@@ -78,8 +78,11 @@ async fn new_post(pool: web::Data<DbPool>, item: web::Json<NewPostHandler>) -> i
         Err(err) => HttpResponse::Ok().body(format!("Error al recibir la data: {}", err))
     }
 }
-//docker run -d --name blog-rust -e "PORT=" -e "DEBUG=0" -p 8007:8765 web:latest
+//docker build -t web:latest .
 //docker run -d --name blog-rust -e "PORT=8080" -e "DEBUG=0" -p 8080:8080 web:latest
+
+//wsl --terminate docker-desktop
+//wsl --terminate docker-desktop-data
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
