@@ -1,0 +1,22 @@
+[package]
+name = "curso_backend"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+<<<<<<< HEAD
+diesel = { version = "2.0.0", features = ["postgres"] }
+dotenvy = "0.15"
+actix-web = "4"
+#libpq = "3.0.0"
+=======
+diesel = { version = "2.0.0", features = ["postgres", "r2d2"] }
+dotenvy = "0.15"
+actix-web = "4"
+serde = { version = "1.0.104", features = ["derive"] }
+serde_json="1.0"
+json="0.12"
+tera="1.10.0"
+>>>>>>> dev

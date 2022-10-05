@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <title>Tera Test</title>
+</head>
+<body>
+    <style>
+        .panel{
+            background-color: #FFFFFF;
+            margin-left: 25%;
+            margin-right: 25%;
+            padding-top: 0.1%;
+            padding-bottom: 0.1%;
+            margin-top: 1%;
+            margin-bottom: 1%;
+        }        
+        a{
+            text-decoration: none;
+            color: #31ACCA;
+        }
+    </style>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        body {
+            min-height: 75rem;
+            padding-top: 4.5rem;
+            display: flex;
+            align-items: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #E5E5E5;
+        }
+        
+        main > .container {
+            padding: 60px 15px 0;
+        }
+        
+        html, body {
+            height: 100%;
+        }
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Inicio</a>
+        </div>
+    </nav>
+    <main class="container" style="font-family: open sans;">
+        <h1 style="text-align: center;">Mi primer template con Tera</h1>
+        {% for post in posts %}
+                <div class="bg-light p-5 rounded panel" >
+                    <a class="h1" href="/post/{{ post.slug }}">{{ post.title }}</a>
+                    <p class="lead">{{ post.body | truncate(length=150) }}</p>
+                </div>
+        {% endfor %}
+    </main>
+    
+
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
