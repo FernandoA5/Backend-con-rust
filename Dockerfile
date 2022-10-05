@@ -28,7 +28,7 @@ WORKDIR /app
 
 ## Copiamos desde el otro contenedor, los archivos de la aplicación
 
-COPY --from=0 /app/.env /app
+##COPY --from=0 /app/.env /app
 COPY --from=0 /app/target/release/curso_backend /app 
 COPY /templates/ /app/templates
 
